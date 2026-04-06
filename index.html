@@ -181,7 +181,7 @@
     <div class="legend-item bad">🍩 Donut → −1 ❤️</div>
     <div class="legend-item bad">🍫 Čokoláda → −1 ❤️</div>
   </div>
-  <button class="btn" onclick="startGame()">Hrát! 🎮</button>
+  <button class="btn" id="startGame()">Hrát! 🎮</button>
 </div>
 
 <!-- Game Over Screen -->
@@ -484,7 +484,9 @@ function loop() {
 
   if (gameRunning) animId = requestAnimationFrame(loop);
 }
-
+document.getElementById('startBtn').addEventListener('click', startGame);
+document.getElementById('restartBtn').addEventListener('click', startGame);
+  
 // Draw static tooth on start screen behind overlay
 resize();
 ctx.clearRect(0, 0, W, H);
